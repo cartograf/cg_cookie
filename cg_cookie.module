@@ -31,7 +31,7 @@ function cg_cookie_init() {
  function cg_cookie_theme() {
      $themes = array (
          'cg_cookie_template' => array(
-             'template' => 'cg_cookie', // your template file called slidedown.tpl.php
+             'template' => 'cg_cookie', // your template file called cg_cookie.tpl.php
              'variables' => array(),
          ),
      );
