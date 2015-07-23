@@ -1,0 +1,39 @@
+<?php
+/**
+ * Implements hook_init()
+ */
+function cg_cookie_init() {
+  // We load the jQuery plugin - credits to https://github.com/martyndavies/jquery.cookienote
+	drupal_add_js(drupal_get_path('module', 'cg_cookie') . '/js/jquery.cookienote.min.js');
+  // We also load jQuery.cookie plugin, to enable the module to remember user's choice when accepting cookies.
+  drupal_add_js(drupal_get_path('module', 'cg_cookie') . '/js/jquery.cookie.js');
+  // then our custom code to run on this plugin
+	drupal_add_js(drupal_get_path('module', 'cg_cookie') . '/js/cg_cookie.js');
+	// then we repeat the operation with standard and custom css files
+  drupal_add_css(drupal_get_path('module', 'cg_cookie') .'/css/jquery.cookienote.css');
+  drupal_add_css(drupal_get_path('module', 'cg_cookie') .'/css/cg_cookie.css');
+}
+
+/**
+ * Implements hook_page_build().
+ */
+ function cg_cookie_page_build (&$page) {
+   $page['page_top']['cg_cookie_template'] = array(
+     '#weight' => -1000,
+     '#markup' => theme('cg_cookie_template'),
+   );
+ }
+
+ /**
+  * Implements theme().
+  */
+
+ function cg_cookie_theme() {
+     $themes = array (
+         'cg_cookie_template' => array(
+             'template' => 'cg_cookie', // your template file called slidedown.tpl.php
+             'variables' => array(),
+         ),
+     );
+     return $themes;
+ }

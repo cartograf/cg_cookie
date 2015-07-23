@@ -1,0 +1,4 @@
+core = "7.x"
+name = "Cartograf EU Cookie"
+project = "cg_cookie"
+version = "7.x-1.0"

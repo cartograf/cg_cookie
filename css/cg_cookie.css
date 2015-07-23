@@ -1,0 +1,32 @@
+#cookie-notice {
+	position: fixed !important;
+	bottom: 0;
+}
+
+#cookienote-container {
+	position: relative; !important;
+	bottom: 0 !important;
+	width: 100%;
+	background: #000;
+}
+#cookienote-container h2 {
+	color: #888;
+	float: unset;
+	width: unset;
+	text-align: center;
+}
+
+#cookienote-container ul {
+    left: unset;
+    position: unset;
+}
+
+
+#cookienote-container p {
+    width: 85%;
+}
+
+#cookienote-container ul #cookienote-continue button {
+	color: #000;
+	padding: 0.1em 0.5em;
+}
